@@ -13,7 +13,7 @@
 |**attack_spe**|INT|NOT NULL|Point attaque spéciale|
 |**defense_spe**|INT|NOT NULL|Point défense spéciale|
 |**speed**|INT|NOT NULL|Vitesse|
-|**number**|INT|NOT NULL|Numero du pokemon qui assigne un `type`|
+|**number**|INT|NOT NULL|Numero du pokemon qui correspond au numero de son image|
 |**created_at**|TIMESTAMP|NOT NULL, CURRENT TIMESTAMP|Date de création|
 |**updated_at**|TIMESTAMP|NULL|Date de modification|
 |||||
