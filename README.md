@@ -1,1 +1,5 @@
-# pokedex
+# Pokedex
+
+## Wireframe
+
+![Wireframe](wireframe.png)
