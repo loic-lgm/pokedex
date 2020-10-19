@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pokemon - myPokedex{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/pokemon_main.css') }}">
+{% endblock %}
+
+{% block body %}
+{% include "partials/nav.html.twig" %}
+<div class="card" style="width: 12rem;">
+  <img class="img" src="{{asset('img/1.png')}}" class="card-img-top" alt="">
+  <div class="card-body">
+    <a href="#" class="btn btn-primary">Bulbizare</a>
+  </div>
+</div>
+{% endblock %}
