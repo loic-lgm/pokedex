@@ -8,10 +8,20 @@
 
 {% block body %}
 {% include "partials/nav.html.twig" %}
-<div class="card" style="width: 12rem;">
-  <img class="img" src="{{asset('img/1.png')}}" class="card-img-top" alt="">
-  <div class="card-body">
-    <a href="#" class="btn btn-primary">Bulbizare</a>
-  </div>
+
+<div class="container">
+    {% for pokemon in pokemons %}
+        <div class="card" style="width: 12rem;">
+            <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}}">
+            <div class="card-body">
+                <a href="#" class="btn btn-primary">{{pokemon.name}}</a>
+                <a href="" class="fa fa-plus-square-o fa-2x add-button"></a>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="pagination">
+        {{ knp_pagination_render(pokemons) }}
+    </div>
 </div>
+
 {% endblock %}

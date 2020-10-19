@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Repository\PokemonRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PokemonController extends AbstractController
@@ -10,10 +13,14 @@ class PokemonController extends AbstractController
     /**
      * @Route("/pokemon", name="pokemon_main")
      */
-    public function index()
+    public function main(PokemonRepository $pokemonRepository, PaginatorInterface $paginator, Request $request)
     {
         return $this->render('pokemon/index.html.twig', [
-            'controller_name' => 'PokemonController',
+            'pokemons' => $paginator->paginate(
+                $pokemonRepository->findAll(),
+                $request->query->getInt('page', 1),
+                15
+            ),
         ]);
     }
 }
