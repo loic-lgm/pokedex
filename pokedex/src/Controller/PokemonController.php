@@ -27,7 +27,7 @@ class PokemonController extends AbstractController
     }
 
     /**
-     * @Route("/pokemon/{id}", name="pokemon_single")
+     * @Route("/pokemon/{id}", name="pokemon_single", requirements={"id"="\d+"})
      */
     public function single(Pokemon $pokemon)
     {
