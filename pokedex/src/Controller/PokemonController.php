@@ -32,7 +32,7 @@ class PokemonController extends AbstractController
     public function single(Pokemon $pokemon)
     {
         return $this->render('pokemon/single.html.twig', [
-            'pokemon' => $pokemon
+            'pokemon' => $pokemon,
         ]);
     }
 }

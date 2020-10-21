@@ -10,34 +10,43 @@
 {% include "partials/nav.html.twig" %}
 <div class="container">
     <div class="card" style="width: 20rem;">
+        <div class="card-body">
+            <h1><span class="badge badge-secondary">{{pokemon.name}}</span></h1>
+            <div class="badge-container">
+            {% for type in pokemon.types %}
+                <a href=""><span class="badge badge-secondary badge-type" style="background-color:#{{type.color}}">{{type.name}}</span></a>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="card" style="width: 20rem;">
         <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}} ">
         <div class="card-body">
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width:{{pokemon.pv / 250 * 100 }}%" aria-valuenow="{{pokemon.pv}}" aria-valuemin="0" aria-valuemax="250"></div>
             </div>
-            <p>PV ({{pokemon.pv}})</p>
+            <p><span class="stat-title">PV</span> ({{pokemon.pv}})</p>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width:{{pokemon.attack / 250 * 100 }}%" aria-valuenow="{{pokemon.attack}}" aria-valuemin="0" aria-valuemax="250"></div>
             </div>
-            <p>ATTAQUE ({{pokemon.attack}})</p>
+            <p><span class="stat-title">ATTAQUE</span> ({{pokemon.attack}})</p>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width:{{pokemon.attackSpe / 250 * 100 }}%" aria-valuenow="{{pokemon.attackSpe}}" aria-valuemin="0" aria-valuemax="250"></div>
             </div>
-            <p>ATTAQUE SPECIALE ({{pokemon.attackSpe}})</p>
+            <p><span class="stat-title">ATTAQUE SPECIALE</span> ({{pokemon.attackSpe}})</p>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width:{{pokemon.defense / 250 * 100 }}%" aria-valuenow="0" aria-valuemin="{{pokemon.defense}}" aria-valuemax="250"></div>
             </div>
-            <p>DEFENSE ({{pokemon.defense}})</p>
+            <p><span class="stat-title">DEFENSE</span> ({{pokemon.defense}})</p>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width:{{pokemon.defenseSpe / 250 * 100 }}%" aria-valuenow="0" aria-valuemin="{{pokemon.defenseSpe}}" aria-valuemax="250"></div>
             </div>
-            <p>DEFENSE SPECIALE ({{pokemon.defenseSpe}})</p>
+            <p><span class="stat-title">DEFENSE SPECIALE</span> ({{pokemon.defenseSpe}})</p>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width:{{pokemon.speed / 250 * 100 }}%" aria-valuenow="0" aria-valuemin="{{pokemon.speed}}" aria-valuemax="250"></div>
             </div>
-            <p>VITESSE ({{pokemon.speed}})</p>
+            <p><span class="stat-title">VITESSE</span> ({{pokemon.speed}})</p>
             <div class="card-bottom">
-                <a href="#" class="btn btn-primary">{{pokemon.name}}</a>
                 <a href="" class="fa fa-plus-square-o fa-2x add-button"></a>
             </div>
         </div>
