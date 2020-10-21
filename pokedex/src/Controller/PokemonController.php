@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Pokemon;
+use App\Entity\Type;
 use App\Repository\PokemonRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,6 +23,16 @@ class PokemonController extends AbstractController
                 $request->query->getInt('page', 1),
                 15
             ),
+        ]);
+    }
+
+    /**
+     * @Route("/pokemon/{id}", name="pokemon_single")
+     */
+    public function single(Pokemon $pokemon)
+    {
+        return $this->render('pokemon/single.html.twig', [
+            'pokemon' => $pokemon
         ]);
     }
 }

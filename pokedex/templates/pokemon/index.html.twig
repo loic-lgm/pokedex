@@ -9,15 +9,26 @@
 {% block body %}
 {% include "partials/nav.html.twig" %}
 
+<div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Trier par
+    </a>
+
+    <div class="dropdown-menu sortable" aria-labelledby="dropdownMenuLink">
+        {{ knp_pagination_sortable(pokemons, 'Nom', 'p.name') }}
+        <a class="dropdown-item" href="#">Type</a>
+    </div>
+</div>
+
 <div class="container">
     {% for pokemon in pokemons %}
-        <div class="card" style="width: 12rem;">
-            <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}}">
-            <div class="card-body">
-                <a href="#" class="btn btn-primary">{{pokemon.name}}</a>
-                <a href="" class="fa fa-plus-square-o fa-2x add-button"></a>
-            </div>
+    <div class="card" style="width: 12rem;">
+        <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}}">
+        <div class="card-body">
+            <a href="#" class="btn btn-primary">{{pokemon.name}}</a>
+            <a href="" class="fa fa-plus-square-o fa-2x add-button"></a>
         </div>
+    </div>
     {% endfor %}
     <div class="pagination">
         {{ knp_pagination_render(pokemons) }}

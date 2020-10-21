@@ -42,12 +42,12 @@ class Pokemon
     /**
      * @ORM\Column(type="integer")
      */
-    private $attack_spe;
+    private $attackSpe;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $defense_spe;
+    private $defenseSpe;
 
     /**
      * @ORM\Column(type="integer")
@@ -140,24 +140,24 @@ class Pokemon
 
     public function getAttackSpe(): ?int
     {
-        return $this->attack_spe;
+        return $this->attackSpe;
     }
 
-    public function setAttackSpe(int $attack_spe): self
+    public function setAttackSpe(int $attackSpe): self
     {
-        $this->attack_spe = $attack_spe;
+        $this->attackSpe = $attackSpe;
 
         return $this;
     }
 
     public function getDefenseSpe(): ?int
     {
-        return $this->defense_spe;
+        return $this->defenseSpe;
     }
 
-    public function setDefenseSpe(int $defense_spe): self
+    public function setDefenseSpe(int $defenseSpe): self
     {
-        $this->defense_spe = $defense_spe;
+        $this->defenseSpe = $defenseSpe;
 
         return $this;
     }
