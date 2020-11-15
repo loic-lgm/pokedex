@@ -10,6 +10,10 @@
     margin-top: 20px;
 }
 
+.form-group {
+    width: 100%;
+}
+
 h1 {
     text-align: center;
     position: relative;
@@ -17,18 +21,6 @@ h1 {
     background-color: white;    
     width: 45%;
     margin: auto;
-
-}
-
-input {
-    margin-bottom: 5px;
-    border-radius: 0rem .25rem .25rem 0rem !important;
-}
-
-.container-email, .container-password {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
 }
 
 .email-logo {
@@ -36,8 +28,16 @@ input {
     border: 1px solid #ced4da;
     border-radius: 15% 0% 0% 15%;
     padding: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 16px;
+}
 
+.container-email, .container-password, .container-username {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    border-radius: 0rem .25rem .25rem 0rem !important;
 }
 
 .password-logo {
@@ -46,7 +46,11 @@ input {
     border-radius: 15% 0% 0% 15%;
     padding: 10px;
     padding-right: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 16px;
+}
+
+button {
+    width: 100%
 }
 
 .checkbox {
