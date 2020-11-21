@@ -9,36 +9,36 @@
 {% block body %}
 {% include "partials/nav.html.twig" %}
 
-{{dump(pokemons)}}
-<div class="container">
-    <h1>Bonjour {{app.user.username}}</h1>
-    <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Trier par
-        </a>
-
-        <div class="dropdown-menu sortable" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Type</a>
-        </div>
-    </div>
-    {% if pokemons %}
-    <div class="container">
-        {% for pokemon in app.user.pokemons %}
-        <div class="card" style="width: 12rem;">
-            <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}}">
-            <div class="card-body">
-                <a href="#" class="btn btn-primary">{{pokemon.name}}</a>
-                <a href="" class="fa fa-plus-square-o fa-2x add-button"></a>
-            </div>
-        </div>
-        {% endfor %}
-        {# <div class="pagination">
-            {{ knp_pagination_render(pokemons) }}
-        </div> #}
-    </div>
-    {% else %}
-    <h1>Vous n'avez pas encore de pokémon dans votre pokédex</h1>
-    {% endif %}
+<div class="top-container">
+    <h1>Bonjour, <span>{{app.user.username}}</span></h1>
+    <a href="">Modifier votre profil</a>
 </div>
+{% if pokemons %}
+<div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Trier par
+    </a>
+
+    <div class="dropdown-menu sortable" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Type</a>
+    </div>
+</div>
+<div class="container">
+    {% for pokemon in app.user.pokemons %}
+    <div class="card" style="width: 12rem;">
+        <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}}">
+        <div class="card-body">
+            <a href="#" class="btn btn-primary">{{pokemon.name}}</a>
+            <a href="" class="fa fa-plus-square-o fa-2x add-button"></a>
+        </div>
+    </div>
+    {% endfor %}
+    {# <div class="pagination">
+        {{ knp_pagination_render(pokemons) }}
+    </div> #}
+</div>
+{% else %}
+<h1>Vous n'avez pas encore de pokémon dans votre pokédex</h1>
+{% endif %}
 
 {% endblock %}
