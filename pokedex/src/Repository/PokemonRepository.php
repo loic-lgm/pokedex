@@ -34,6 +34,20 @@ class PokemonRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @return Pokemon[] Returns an array of Pokemon objects
+     */
+    public function findAllByUserId($userId)
+    {
+        return $this->createQueryBuilder('p')
+            ->innerJoin('p.users', 'u')
+            ->where('u.id = :userId')
+            ->setParameter('userId', $userId)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Pokemon[] Returns an array of Pokemon objects
     //  */
