@@ -7,7 +7,6 @@
 {% block title %}S'inscrire - myPokedex{% endblock %}
 
 {% block body %}
-{% include "partials/nav.html.twig" %}
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}

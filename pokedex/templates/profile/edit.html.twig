@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer mon compte - myPokedex{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/profile_edit.css') }}">
+{% endblock %}
+
+{% block body %}
+
+{{form_start(formProfileEdit)}}
+<div class="container">
+    <h1>
+        Modifiez votre compte
+    </h1>
+    <div class="container-email">
+        <div class="email-logo fa fa-at  fa-lg"></div>
+        {{ form_row(formProfileEdit.email) }}
+        <div class="form-error">
+        {{ form_errors(formProfileEdit.email) }}
+    </div>
+    </div>
+    <div class="container-name">
+        <div class="name-logo fa fa-user fa-lg"></div>
+        {{ form_row(formProfileEdit.username) }}
+    </div>
+    <div class="container-password">
+        <div class="password-logo fa fa-lock fa-lg"></div>
+        {{ form_row(formProfileEdit.passwordFirst) }}
+    </div>
+    <div class="container-password">
+        <div class="password-logo fa fa-lock fa-lg"></div>
+        {{ form_row(formProfileEdit.passwordBis) }}
+    </div>
+{{form_end(formProfileEdit)}}
+
+</div>
+
+<a href="{{ path('profile_main', { 'id': app.user.id }) }}" class="btn-back btn btn-outline-primary">Revenir sur mon profil</a>
+
+{% endblock %}

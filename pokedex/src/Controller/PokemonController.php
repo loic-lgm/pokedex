@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Pokemon;
-use App\Entity\Type;
 use App\Repository\PokemonRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
