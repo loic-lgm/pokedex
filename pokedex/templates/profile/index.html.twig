@@ -11,7 +11,10 @@
 
 <div class="top-container">
     <h1>Bonjour, <span>{{app.user.username}}</span></h1>
-    <a href="">Modifier votre profil</a>
+    <div class="container-header">
+        <a class="btn btn-modify btn-outline-primary" href="">Modifier votre profil</a>
+        <a class="btn btn-add btn-outline-primary" href="">Ajouter d'autres Pokémon</a>
+    </div>
 </div>
 {% if pokemons %}
 <div class="dropdown">

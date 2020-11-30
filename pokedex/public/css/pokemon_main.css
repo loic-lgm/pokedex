@@ -47,3 +47,12 @@ a, a:hover {
     margin: auto;
 }
 
+.container-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-modify, .btn-add {
+    width: 215px;
+    margin: 5px;
+}
