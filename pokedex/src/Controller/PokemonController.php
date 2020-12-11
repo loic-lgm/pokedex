@@ -15,7 +15,8 @@ class PokemonController extends AbstractController
      * @Route("/pokemon", name="pokemon_main")
      */
     public function main(PokemonRepository $pokemonRepository, PaginatorInterface $paginator, Request $request)
-    {
+    {   
+        
         return $this->render('pokemon/index.html.twig', [
             'pokemons' => $paginator->paginate(
                 $pokemonRepository->findAll(),
