@@ -41,7 +41,6 @@ class ProfileController extends AbstractController
                         $form->get('passwordFirst')->getData()
                     )
                 );
-                //$em->persist($user);
                 $em->flush(); 
                 $this->addFlash('success', 'Votre profil a bien été modifié');
                 return $this->redirectToRoute('profile_main', ['id' => $user->getId()]);

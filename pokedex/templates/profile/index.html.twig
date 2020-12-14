@@ -31,7 +31,7 @@
         <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}}">
         <div class="card-body">
             <a href="#" class="btn btn-primary">{{pokemon.name}}</a>
-            <a href="" class="fa fa-plus-square-o fa-2x add-button"></a>
+            <a href="{{path('pokemon_remove', { 'id': pokemon.id }) }}" class="fa fa-minus-square-o fa-2x add-button"></a>
         </div>
     </div>
     {% endfor %}
