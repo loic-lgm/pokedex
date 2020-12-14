@@ -8,7 +8,7 @@
 
 {% block body %}
 
-<div class="dropdown">
+{# <div class="dropdown">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Trier par
     </a>
@@ -17,7 +17,7 @@
         {{ knp_pagination_sortable(pokemons, 'Nom', 'p.name') }}
         <a class="dropdown-item" href="#">Type</a>
     </div>
-</div>
+</div> #}
 
 <div class="container">
     {% for pokemon in pokemons %}

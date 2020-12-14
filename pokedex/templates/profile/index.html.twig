@@ -16,7 +16,7 @@
     </div>
 </div>
 {% if pokemons %}
-<div class="dropdown">
+{# <div class="dropdown">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Trier par
     </a>
@@ -24,7 +24,7 @@
     <div class="dropdown-menu sortable" aria-labelledby="dropdownMenuLink">
         <a class="dropdown-item" href="#">Type</a>
     </div>
-</div>
+</div> #}
 <div class="container">
     {% for pokemon in app.user.pokemons %}
     <div class="card" style="width: 12rem;">
@@ -40,7 +40,9 @@
     </div> #}
 </div>
 {% else %}
-<h1>Vous n'avez pas encore de pokémon dans votre pokédex</h1>
+<div class="container">
+    <p class="no-pokemon">Vous n'avez pas encore de pokémon dans votre pokédex. Rendez-vous sur la page <a href="{{path('pokemon_main')}}">Pokemon</a> pour débuter votre pokedex.</p>
+</div>
 {% endif %}
 
 {% endblock %}

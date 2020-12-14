@@ -56,3 +56,7 @@ a, a:hover {
     width: 215px;
     margin: 5px;
 }
+
+.no-pokemon {
+    margin-top: 45px;
+}

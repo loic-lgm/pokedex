@@ -17,7 +17,6 @@ class PokemonController extends AbstractController
      */
     public function main(PokemonRepository $pokemonRepository, PaginatorInterface $paginator, Request $request)
     {   
-        
         return $this->render('pokemon/index.html.twig', [
             'pokemons' => $paginator->paginate(
                 $pokemonRepository->findAll(),
@@ -49,14 +48,14 @@ class PokemonController extends AbstractController
         $em->flush(); 
         $this->addFlash('success', 'Le pokemon ' . $pokemon->getName() . ' a bien été ajouté à votre pokedex');
         
-        return $this->redirectToRoute('pokemon_main');
+        return $this->redirectToRoute('profile_main', ['id' => $this->getUser()->getId()]);
 
     }
 
     /**
      * @Route("/pokemon/{id}/remove", name="pokemon_remove", requirements={"id"="\d+"})
      */
-    public function remove(EntityManagerInterface $em, Pokemon $pokemon)
+    public function remove(EntityManagerInterface $em, Pokemon $pokemon, Request $request)
     {
 
         //$movie->setSlug($slugger->sluggify($movie->getTitle()));
@@ -65,7 +64,7 @@ class PokemonController extends AbstractController
         $em->flush(); 
         $this->addFlash('success', 'Le pokemon ' . $pokemon->getName() . ' a bien été retiré de votre pokedex');
         
-        return $this->redirectToRoute('pokemon_main');
+        return $this->redirectToRoute('profile_main', ['id' => $this->getUser()->getId()]);
 
     }
 }
