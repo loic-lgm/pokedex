@@ -11,11 +11,11 @@
         <h1>myPokedex</h1>
     </div>
     <div class="home-button">
-        <a href="" class="btn btn-primary">Se connecter</a>
-        <a href="" class="btn btn-primary">Pokemon</a>
+        <a href="{{path('app_login')}}" class="btn btn-primary">Se connecter</a>
+        <a href="{{path('pokemon_main')}}" class="btn btn-primary">Pokemon</a>
     </div>
     <div class="link">
-        <a href="">Pas encore inscrit ?</a>
+        <a href="{{path('app_register')}}">Pas encore inscrit ?</a>
     </div>
 </div>
 {% endblock %}

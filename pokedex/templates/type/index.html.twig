@@ -10,7 +10,7 @@
 
 <div class="container">
 {% for type in types %}
-    <a href="#" class="badge badge-primary badge-type" style="background-color:#{{type.color}}">{{type.name}}</a>
+    <a href="{{path('type_single', {'id': type.id })}}" class="badge badge-primary badge-type" style="background-color:#{{type.color}}">{{type.name}}</a>
 {% endfor %}
 </div>
 

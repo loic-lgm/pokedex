@@ -13,7 +13,7 @@
             <h1><span class="badge badge-secondary">{{pokemon.name}}</span></h1>
             <div class="badge-container">
             {% for type in pokemon.types %}
-                <a href=""><span class="badge badge-secondary badge-type" style="background-color:#{{type.color}}">{{type.name}}</span></a>
+                <a href="{{path('type_single', {'id': type.id})}}"><span class="badge badge-secondary badge-type" style="background-color:#{{type.color}}">{{type.name}}</span></a>
             {% endfor %}
             </div>
         </div>
@@ -46,7 +46,11 @@
             </div>
             <p><span class="stat-title">VITESSE</span> ({{pokemon.speed}})</p>
             <div class="card-bottom">
-                <a href="" class="fa fa-plus-square-o fa-2x add-button"></a>
+                {% if pokemon in app.user.pokemons %}
+                    <a href="{{path('pokemon_remove', { 'id': pokemon.id }) }}" class="fa fa-minus-square-o fa-2x add-button"></a>
+                {% else %}
+                    <a href="{{path('pokemon_add', { 'id': pokemon.id }) }}" class="fa fa-plus-square-o fa-2x add-button"></a>
+                {% endif %}
             </div>
         </div>
     </div>

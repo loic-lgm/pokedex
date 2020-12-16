@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">myPokedex</a>
+    <a class="navbar-brand" href="{{path('pokemon_main')}}">myPokedex</a>
     <ul class="navbar-nav mr-auto">
     <li class="nav-item {% if app.request.attributes.get('_route') == 'pokemon_main' %}active{% endif %}">
-        <a class="nav-link" href="">Pokemon</a>
+        <a class="nav-link" href="{{path('pokemon_main')}}">Pokemon</a>
     </li>
     <li class="nav-item {% if app.request.attributes.get('_route') == 'type_main' %}active{% endif %}">
-        <a class="nav-link" href="">Type</a>
+        <a class="nav-link" href="{{path('type_main')}}">Type</a>
     </li>
     <li class="nav-item {% if app.request.attributes.get('_route') == 'account_main' %}active{% endif %}">
-        <a class="nav-link" href="">Mon compte</a>
+        <a class="nav-link" href="{{path('profile_main', {'id': app.user.id})}}">Mon compte</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">Se déconnecter</a>
+        <a class="nav-link" href="{{path('app_logout')}}">Se déconnecter</a>
     </li>
     <li class="nav-item">
     </li>

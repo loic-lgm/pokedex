@@ -8,25 +8,29 @@
 
 {% block body %}
 
-<div class="dropdown">
+{# <div class="dropdown">
     <h1><span class="badge badge-secondary" style="background-color:#{{type.color}}">{{type.name}}</span></h1>
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Trier par
     </a>
 
     <div class="dropdown-menu sortable" aria-labelledby="dropdownMenuLink">
-        {# {{ knp_pagination_sortable(pokemons, 'Nom', 'p.name') }} #}
+        {{ knp_pagination_sortable(pokemons, 'Nom', 'p.name') }}
         <a class="dropdown-item" href="#">Type</a>
     </div>
-</div>
+</div> #}
 
 <div class="container">
     {% for pokemon in pokemons %}
     <div class="card" style="width: 12rem;">
         <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}}">
         <div class="card-body">
-            <a href="#" class="btn btn-primary">{{pokemon.name}}</a>
-            <a href="" class="fa fa-plus-square-o fa-2x add-button"></a>
+            <a href="{{path('pokemon_single', {'id': pokemon.id})}}" class="btn btn-primary">{{pokemon.name}}</a>
+            {% if pokemon in app.user.pokemons %}
+            <a href="{{path('pokemon_remove', { 'id': pokemon.id }) }}" class="fa fa-minus-square-o fa-2x add-button"></a>
+            {% else %}
+            <a href="{{path('pokemon_add', { 'id': pokemon.id }) }}" class="fa fa-plus-square-o fa-2x add-button"></a>
+            {% endif %}
         </div>
     </div>
     {% endfor %}

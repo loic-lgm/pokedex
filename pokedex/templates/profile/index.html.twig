@@ -11,8 +11,8 @@
 <div class="top-container">
     <h1>Bonjour, <span>{{app.user.username}}</span></h1>
     <div class="container-header">
-        <a class="btn btn-modify btn-outline-primary" href="">Modifier votre profil</a>
-        <a class="btn btn-add btn-outline-primary" href="">Ajouter d'autres Pokémon</a>
+        <a class="btn btn-modify btn-outline-primary" href="{{path('profile_edit', {'id': app.user.id})}}">Modifier votre profil</a>
+        <a class="btn btn-add btn-outline-primary" href="{{path('pokemon_main')}}">Ajouter d'autres Pokémon</a>
     </div>
 </div>
 {% if pokemons %}
@@ -30,7 +30,7 @@
     <div class="card" style="width: 12rem;">
         <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}}">
         <div class="card-body">
-            <a href="#" class="btn btn-primary">{{pokemon.name}}</a>
+            <a href="{{path('pokemon_single', {'id': pokemon.id})}}" class="btn btn-primary">{{pokemon.name}}</a>
             <a href="{{path('pokemon_remove', { 'id': pokemon.id }) }}" class="fa fa-minus-square-o fa-2x add-button"></a>
         </div>
     </div>
