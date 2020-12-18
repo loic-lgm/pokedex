@@ -8,9 +8,17 @@
 
 {% block body %}
 <div class="container">
-    <div class="card" style="width: 20rem;">
+    <div class="card" style="width:20rem;">
         <div class="card-body">
-            <h1><span class="badge badge-secondary">{{pokemon.name}}</span></h1>
+            <div class="container-name">
+                {% if previousPokemon in pokemons %}
+                <a href="{{path('pokemon_single', {'id': previousPokemon.id})}}" class="fa fa-chevron-left fa-lg"></a>
+                {% endif %}
+                <h1><span class="badge badge-secondary">{{pokemon.name}}</span></h1>
+                {% if nextPokemon in pokemons %}
+                <a href="{{path('pokemon_single', {'id': nextPokemon.id + 1})}}" class="fa fa-chevron-right fa-lg"></a>
+                {% endif %}
+            </div>
             <div class="badge-container">
             {% for type in pokemon.types %}
                 <a href="{{path('type_single', {'id': type.id})}}"><span class="badge badge-secondary badge-type" style="background-color:#{{type.color}}">{{type.name}}</span></a>
@@ -18,7 +26,7 @@
             </div>
         </div>
     </div>
-    <div class="card" style="width: 20rem;">
+    <div class="card" style="width:20rem;">
         <img class="img" src="{{asset('img/' ~ pokemon.number ~ '.png')}}" class="card-img-top" alt="Photo de {{pokemon.name}} ">
         <div class="card-body">
             <div class="progress">

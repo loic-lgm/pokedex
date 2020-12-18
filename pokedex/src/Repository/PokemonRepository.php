@@ -48,6 +48,28 @@ class PokemonRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findByPreviousId(int $id)
+    {
+
+        return $this->createQueryBuilder('p')
+            ->where('p.id = :id - 1')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
+    public function findByNextId(int $id)
+    {
+
+        return $this->createQueryBuilder('p')
+            ->where('p.id = :id + 1')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
     // /**
     //  * @return Pokemon[] Returns an array of Pokemon objects
     //  */

@@ -29,10 +29,13 @@ class PokemonController extends AbstractController
     /**
      * @Route("/pokemon/{id}", name="pokemon_single", requirements={"id"="\d+"})
      */
-    public function single(Pokemon $pokemon)
+    public function single(Pokemon $pokemon, PokemonRepository $pokemonRepository)
     {
         return $this->render('pokemon/single.html.twig', [
             'pokemon' => $pokemon,
+            'pokemons' => $pokemonRepository->findAll(),
+            'previousPokemon' => $pokemonRepository->findByPreviousId($pokemon->getId()),
+            'nextPokemon' => $pokemonRepository->findByNextId($pokemon->getId())
         ]);
     }
 
