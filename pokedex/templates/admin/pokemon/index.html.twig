@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pokemon - Admin - myPokedex{% endblock %}
+
+{% block body %}
+<table class="table table-borderless container">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Type</th>
+      <th scope="col">Date d'ajout</th>
+      <th scope="col">Dernière modification</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for pokemon in pokemons %}
+    <tr>
+      <th scope="row">{{pokemon.id}}</th>
+      <td><a href="{{path('pokemon_single', {'id':pokemon.id})}}">{{pokemon.name}}</a></td>
+      <td>
+        {% for type in pokemon.types %} 
+            <a href="{{path('type_single', {'id':type.id})}}">
+                {{type}}
+            </a>
+        {% endfor %}
+      </td>
+      <td>{{pokemon.createdAt|date("d/m/Y")}}</td>
+      <td>{{pokemon.updatedAt|date("d/m/Y")}}</td>
+      <td>
+        <a href="{{path('admin_pokemon_edit', {'id':pokemon.id})}}" class="fa fa-pencil-square-o"></a>
+        <a href="{{path('admin_pokemon_delete', {'id':pokemon.id})}}" class="fa fa-times text-danger"></a>
+      </td>
+      <td></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
