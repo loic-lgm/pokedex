@@ -11,8 +11,51 @@
 <div class="container">
 {{form_start(formEditPokemon)}}
     <h1>
-        Modifier poké
+        Modifier {{pokemon.name}}
     </h1>
+    <img src="{{asset('img/' ~ pokemon.number ~ '.png')}}" alt="">
+    <div class="container-user">
+        <div class="user-logo fa fa-user fa-lg"></div>
+        {{ form_row(formEditPokemon.name) }}
+    </div>
+    <p><span class="stat-title">POINT DE VIE</span> ({{pokemon.pv}})</p>
+    <div class="container-pv">
+        <div class="pv-logo fa fa-heart fa-lg"></div>
+        {{ form_row(formEditPokemon.pv) }}
+        {# <input type="range" class="form-control-range" id="formControlRange"> #}
+    </div>
+    <p><span class="stat-title">ATTAQUE</span> ({{pokemon.attack}})</p>
+    <div class="container-attack">
+        <div class="attack-logo fa fa-crosshairs fa-lg"></div>
+        {{ form_row(formEditPokemon.attack) }}
+    </div>
+    <p><span class="stat-title">ATTAQUE SPECIALE</span> ({{pokemon.attackSpe}})</p>
+    <div class="container-attackSpe">
+        <div class="attackSpe-logo fa fa-crosshairs fa-lg">+</div>
+        {{ form_row(formEditPokemon.attackSpe) }}
+    </div>
+    <p><span class="stat-title">DEFENSE</span> ({{pokemon.defense}})</p>
+    <div class="container-defense">
+        <div class="defense-logo fa fa-shield fa-lg"></div>
+        {{ form_row(formEditPokemon.defense) }}
+    </div>
+    <p><span class="stat-title">DEFENSE SPECIALE</span> ({{pokemon.defenseSpe}})</p>
+    <div class="container-defenseSpe">
+        <div class="defenseSpe-logo fa fa-shield fa-lg">+</div>
+        {{ form_row(formEditPokemon.defenseSpe) }}
+    </div>
+    <p><span class="stat-title">VITESSE</span> ({{pokemon.speed}})</p>
+    <div class="container-speed">
+        <div class="speed-logo fa fa-bolt fa-lg"></div>
+        {{ form_row(formEditPokemon.speed) }}
+    </div>
+    <div class="container-type">
+        <div class="type-logo fa fa-tags fa-lg"></div>
+        {{ form_row(formEditPokemon.types) }}
+    </div>
 {{form_end(formEditPokemon)}}
 </div>
+<div class="icofont-hand-power"></div>
+<a href="{{ path('admin_pokemon')}}" class="btn-back btn btn-outline-primary">Revenir sur la liste des Pokemon</a>
+
 {% endblock %}

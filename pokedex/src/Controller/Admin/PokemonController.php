@@ -41,6 +41,7 @@ class PokemonController extends AbstractController
 
         return $this->render('admin/pokemon/edit.html.twig', [
             'formEditPokemon' => $form->createView(),
+            'pokemon' => $pokemon
             ]
         );
 

@@ -10,3 +10,73 @@
     justify-content: center;
     flex-wrap: wrap; */
 }
+
+h1 {
+    text-align: center;
+    position: relative;
+    bottom: 35px;
+    background-color: white;    
+    width: 65%;
+    margin: auto;
+}
+
+img {
+    width: 30%;
+    display: block;
+    margin: auto;
+    position: relative;
+    bottom: 15px;
+}
+
+.container-user, .container-pv, .container-attack, .container-attackSpe, .container-defense, .container-defenseSpe, .container-speed, .container-type {
+    display: flex;
+    align-items: center;
+}
+
+.user-logo, .pv-logo, .attack-logo, .attackSpe-logo, .defense-logo, .defenseSpe-logo, .speed-logo {
+    background-color: #ced4da;
+    border: 1px solid #ced4da;
+    border-radius: 15% 0% 0% 15%;
+    padding: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    bottom: 8px;
+
+}
+
+.type-logo {
+    height: 94px;
+    background-color: #ced4da;
+    border: 1px solid #ced4da;
+    border-radius: 5% 0% 0% 5%;
+    padding: 10px;
+    position: relative;
+    bottom: 8px;
+    left: 2px;
+
+}
+
+input {
+    margin-bottom: 5px;
+    border-radius: 0rem .25rem .25rem 0rem !important;
+}
+
+.form-group{
+    flex-grow : 1;
+}
+
+button {
+    width: 100%;
+}
+
+.btn-back {
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 20px;
+}
+
+p {
+    position: relative;
+    top: 5px;
+    font-size: x-small;
+}

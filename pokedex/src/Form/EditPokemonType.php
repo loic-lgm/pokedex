@@ -13,14 +13,14 @@ class EditPokemonType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, ['label' => 'Nom'])
-            ->add('pv', null, ['label' => 'Point de vie'])
-            ->add('attack', null, ['label' => 'Attaque'])
-            ->add('attackSpe', null, ['label' => 'Attaque spéciale'])
-            ->add('defense', null, ['label' => 'Défense'])
-            ->add('defenseSpe', null, ['label' => 'Défense spéciale'])
-            ->add('speed', null, ['label' => 'Vitesse'])
-            ->add('types', null, ['label' => 'Types'])
+            ->add('name', null, ['label' => false])
+            ->add('pv', null, ['label' => false,])
+            ->add('attack', null, ['label' => false])
+            ->add('attackSpe', null, ['label' => false])
+            ->add('defense', null, ['label' => false])
+            ->add('defenseSpe', null, ['label' => false])
+            ->add('speed', null, ['label' => false])
+            ->add('types', null, ['label' => false])
             ->add('save', SubmitType::class, ['label' => 'Enregstrer'])
         ;
     }

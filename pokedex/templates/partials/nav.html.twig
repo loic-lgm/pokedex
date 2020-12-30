@@ -11,12 +11,15 @@
             <li class="nav-item {% if app.request.attributes.get('_route') == 'type_main' %}active{% endif %}">
                 <a class="nav-link" href="{{path('type_main')}}">Type</a>
             </li>
+            {% if app.user %}
             <li class="nav-item {% if app.request.attributes.get('_route') == 'account_main' %}active{% endif %}">
                 <a class="nav-link" href="{{path('profile_main', {'id': app.user.id})}}">Mon compte</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{path('app_logout')}}">Se déconnecter</a>
-            </li>
-        </ul>    
+            </li> 
+            {% endif %}
+        </ul>
+        <a class="nav-link btn btn-outline-secondary" href="{{path('app_logout')}}">ADMIN</a>
     </div>
 </nav>
