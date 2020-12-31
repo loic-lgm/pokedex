@@ -20,6 +20,8 @@
             </li> 
             {% endif %}
         </ul>
+        {% if is_granted('ROLE_ADMIN')%}
         <a class="nav-link btn btn-outline-secondary" href="{{path('admin_pokemon')}}">ADMIN</a>
+        {% endif %}
     </div>
 </nav>
